@@ -33,7 +33,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Candle Wax Weight Calculator" />
+        <h1 className="title">Candle Wax Weight Calculator</h1>
         <br />
 
         <div className="main-container">
@@ -130,6 +130,11 @@ export default function Home() {
       <style jsx>{`
         .App {
           text-align: center;
+        }
+
+        .title {
+          text-align: center;
+          margin: 30px;
         }
 
         .main-container {
