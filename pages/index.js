@@ -12,6 +12,9 @@ export default function Home() {
   const [resultFragranceWeight, setResultFragranceWeight] = useState("0");
 
   function calculate() {
+    if (isNaN(vesselWeight) || isNaN(vesselPlusWaterWeight)) {
+      return;
+    }
     const waterWeight = vesselPlusWaterWeight - vesselWeight
     const totalWaxWeight = waterWeight * specificGravity
     var waxWeight = totalWaxWeight / (1 + fragrance/100)
@@ -106,14 +109,14 @@ export default function Home() {
             <div className="results-container">
               <div className="label-div"><label>WAX WEIGHT</label></div>
               <div>
-              <span className="result">{resultWaxWeight}</span>
-              <span className="units"> grams</span>
+                <span className="result">{resultWaxWeight}</span>
+                <span className="units"> grams</span>
               </div>
               <br /><br />
-              <label>FRAGRANCE WEIGHT</label>
+              <div className="label-div"><label>FRAGRANCE WEIGHT</label></div>
               <div>
-              <span className="result">{resultFragranceWeight}</span>
-              <span className="units"> grams</span>
+                <span className="result">{resultFragranceWeight}</span>
+                <span className="units"> grams</span>
               </div>
             </div>
           </div>
@@ -130,23 +133,22 @@ export default function Home() {
         .main-container {
           display: flex;
           flex-direction: row;
+          width: 100%;
         }
 
         .left-container {
           display: flex;
           flex-direction: column;
           align-items: left;
-          width: 50%;
-          height: 100%;
-          padding-right: 100px;
+          width: 350px;
+          margin-right: 100px;
         }
 
         .right-container {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 50%;
-          height: 100%;
+          width: 350px;
           padding: 10px;
         }
         
@@ -191,12 +193,31 @@ export default function Home() {
 
         input {
           font-size: 1.2em;
+          outline: 0;
+          background: #f2f2f2;
+          width: 100%;
+          border: 0;
+          margin: 0 0 15px;
+          padding: 15px;
+          box-sizing: border-box;
         }
 
         button {
           font-size: 1.2em;
-          width: 400px;
-          height: 40px;
+          width: 230px;
+          height: 50px;
+          cursor: pointer;
+          border: 0;
+          background-color: #333;
+          color: #fff;
+          transition: all .2s ease-in-out;
+        }
+
+        button:hover {
+          box-shadow: 0px 0px 10px grey;
+          }
+        button:active {
+          transform: scale(0.95);
         }
 
         .results-container {
