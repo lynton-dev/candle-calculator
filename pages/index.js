@@ -102,6 +102,8 @@ export default function Home() {
                 <button type="button" className="btn btn-primary" onClick={() => {calculate()}}> Calculate </button>
               </div>
 
+              <br />
+
             </div>
           </div>
 
@@ -135,13 +137,24 @@ export default function Home() {
           flex-direction: row;
           width: 100%;
         }
+        @media only screen and (max-width : 800px) {
+          .main-container {
+          flex-direction: column;
+          }
+        }
 
         .left-container {
           display: flex;
           flex-direction: column;
           align-items: left;
           width: 350px;
+          padding: 10px;
           margin-right: 100px;
+        }
+        @media only screen and (max-width : 800px) {
+          .left-container {
+            margin-right: 0px;
+          }
         }
 
         .right-container {
@@ -157,11 +170,15 @@ export default function Home() {
           flex-direction: column;
           align-items: left;
         }
+        @media only screen and (max-width : 800px) {
+          .container-form {
+            align-items: center;
+          }
+        }
         
         .inline-form {
           display: flex;
           flex-direction: row;
-          padding: 10px;
         }
         
         .inline-form > div > label  {
@@ -179,6 +196,11 @@ export default function Home() {
         
         .inline-form > button:first-child  {
           margin-left : 0px;
+        }
+        @media only screen and (max-width : 800px) {
+          .inline-form > button:first-child  {
+            margin-left : 10px;
+          }
         }
         
         label {
@@ -233,13 +255,6 @@ export default function Home() {
 
         .units {
           color: #555;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
         }
       `}</style>
 
