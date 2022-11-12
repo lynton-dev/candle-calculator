@@ -28,17 +28,16 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Candle Calculator!</title>
+        <title>Candle Wax Calculator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">Candle Wax Weight Calculator</h1>
+        <h1 className="title">Candle Wax Calculator</h1>
         <br />
 
         <div className="main-container">
           <div className="left-container">
-            <div className="container-form">
               <div className="inline-form">
                 <div>
                   <div className="label-div">
@@ -52,14 +51,14 @@ export default function Home() {
                     className="form-control"
                     placeholder="in grams"
                   />
-              </div>
-            </div>
-
-            <div className="inline-form">
-              <div>
-                <div className="label-div">
-                  <label for="vesselPlusWaterWeight">WEIGHT OF VESSEL PLUS WATER</label>
                 </div>
+              </div>
+
+              <div className="inline-form">
+                <div>
+                  <div className="label-div">
+                    <label for="vesselPlusWaterWeight">WEIGHT OF VESSEL PLUS WATER</label>
+                  </div>
                   <input
                     type="number"
                     value={vesselPlusWaterWeight}
@@ -101,11 +100,11 @@ export default function Home() {
               <div className="inline-form">
                 <button type="button" className="btn btn-primary" onClick={() => {calculate()}}> Calculate </button>
               </div>
+              
+              <hr className="h-border" style={{ width:"50%", borderTop: "1px solid #b5b5b5", marginTop: "50px" }} />
 
-              <br />
-
-            </div>
           </div>
+        
 
           <div className="right-container">
             <div className="results-container">
@@ -126,156 +125,6 @@ export default function Home() {
         </div>
 
       </main>
-
-      <style jsx>{`
-        .App {
-          text-align: center;
-        }
-
-        .title {
-          text-align: center;
-          margin: 30px;
-        }
-
-        .main-container {
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-        }
-        @media only screen and (max-width : 800px) {
-          .main-container {
-          flex-direction: column;
-          }
-        }
-
-        .left-container {
-          display: flex;
-          flex-direction: column;
-          align-items: left;
-          width: 350px;
-          padding: 10px;
-          margin-right: 100px;
-        }
-        @media only screen and (max-width : 800px) {
-          .left-container {
-            margin-right: 0px;
-          }
-        }
-
-        .right-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 350px;
-          padding: 10px;
-        }
-        
-        .container-form {
-          display: flex;
-          flex-direction: column;
-          align-items: left;
-        }
-        @media only screen and (max-width : 800px) {
-          .container-form {
-            align-items: center;
-          }
-        }
-        
-        .inline-form {
-          display: flex;
-          flex-direction: row;
-        }
-        
-        .inline-form > div > label  {
-          margin-left : 15px;
-        }
-        
-        div.form-control-lg  {
-          padding : .5rem 0;
-          padding-left: 2.25rem;
-        }
-        
-        .inline-form > button  {
-          margin : 10px;
-        }
-        
-        .inline-form > button:first-child  {
-          margin-left : 0px;
-        }
-        @media only screen and (max-width : 800px) {
-          .inline-form > button:first-child  {
-            margin-left : 10px;
-          }
-        }
-        
-        label {
-          cursor : pointer;
-          font-size: 0.8em;
-          color: #111;
-        }
-
-        .label-div {
-          padding-bottom: 10px;
-        }
-
-        input {
-          font-size: 1.2em;
-          outline: 0;
-          background: #f2f2f2;
-          width: 100%;
-          border: 0;
-          margin: 0 0 15px;
-          padding: 15px;
-          box-sizing: border-box;
-        }
-
-        button {
-          font-size: 1.2em;
-          width: 230px;
-          height: 50px;
-          cursor: pointer;
-          border: 0;
-          background-color: #333;
-          color: #fff;
-          transition: all .2s ease-in-out;
-        }
-
-        button:hover {
-          box-shadow: 0px 0px 10px grey;
-          }
-        button:active {
-          transform: scale(0.95);
-        }
-
-        .results-container {
-          display: flex;
-          flex-direction: column;
-          align-items: left;
-        }
-
-        .result {
-          font-weight: bold;
-          font-size: 2em;
-        }
-
-        .units {
-          color: #555;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Avenier Next, Open Sans,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
 
       <Footer />
     </div>
