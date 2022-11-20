@@ -12,7 +12,10 @@ export default function Home() {
   const [resultFragranceWeight, setResultFragranceWeight] = useState("0");
 
   function calculate() {
-    if (isNaN(vesselWeight) || isNaN(vesselPlusWaterWeight)) {
+    if (isNaN(vesselWeight) 
+    || isNaN(vesselPlusWaterWeight)
+    || isNaN(fragrance)
+    || isNaN(specificGravity)) {
       return;
     }
     const waterWeight = vesselPlusWaterWeight - vesselWeight
@@ -46,8 +49,9 @@ export default function Home() {
                   <input
                     id="vesselWeight"
                     type="number"
+                    min="0"
                     value={vesselWeight}
-                    onChange={e => setVesselWeight(+e.target.value)}
+                    onChange={e => setVesselWeight(e.target.value)}
                     className="form-control"
                     placeholder="in grams"
                   />
@@ -61,8 +65,9 @@ export default function Home() {
                   </div>
                   <input
                     type="number"
+                    min="0"
                     value={vesselPlusWaterWeight}
-                    onChange={e => setVesselPlusWaterWeight(+e.target.value)}
+                    onChange={e => setVesselPlusWaterWeight(e.target.value)}
                     className="form-control"
                     placeholder="in grams"
                   />
@@ -76,8 +81,9 @@ export default function Home() {
                 </div>
                   <input
                     type="number"
+                    min="0"
                     value={fragrance}
-                    onChange={e => setFragrance(+e.target.value)}
+                    onChange={e => setFragrance(e.target.value)}
                     className="form-control"
                   />
                 </div>
@@ -90,8 +96,10 @@ export default function Home() {
                 </div>
                   <input
                     type="number"
+                    min="0"
+                    step="0.1"
                     value={specificGravity}
-                    onChange={e => setSpecificGravity(+e.target.value)}
+                    onChange={e => setSpecificGravity(e.target.value)}
                     className="form-control"
                   />
                 </div>
