@@ -129,9 +129,9 @@ export default function Home() {
         </div>
 
         <div className="bottom-container">
-        <div className="inline-form">
-          <button type="button" className="btn btn-primary" onClick={() => {calculate()}}> Calculate </button>
-        </div>
+          <div className="inline-form">
+            <button type="button" className="btn btn-primary" onClick={() => {calculate()}}> Calculate </button>
+          </div>
         </div>
 
       </div>
