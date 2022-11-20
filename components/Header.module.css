@@ -1,9 +1,9 @@
 .header {
   width: 100vw;
   height: 64px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 10px;
-  padding-left: 30px;
+  padding-left: 60px;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -11,9 +11,9 @@
   position: fixed;
   top: 0;
   overflow: hidden;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .header-logo {
