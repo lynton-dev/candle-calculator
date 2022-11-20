@@ -35,11 +35,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">Candle Wax Calculator</h1>
-        <br />
+      <Header />
 
-        <div className="main-container">
+      <main>
+      <div className="main-container">
+        <div className="outer-container">
           <div className="left-container">
               <div className="inline-form">
                 <div>
@@ -82,6 +82,7 @@ export default function Home() {
                   <input
                     type="number"
                     min="0"
+                    max="100"
                     value={fragrance}
                     onChange={e => setFragrance(e.target.value)}
                     className="form-control"
@@ -97,19 +98,14 @@ export default function Home() {
                   <input
                     type="number"
                     min="0"
-                    step="0.1"
+                    max="1"
+                    step="0.01"
                     value={specificGravity}
                     onChange={e => setSpecificGravity(e.target.value)}
                     className="form-control"
                   />
                 </div>
               </div>
-
-              <div className="inline-form">
-                <button type="button" className="btn btn-primary" onClick={() => {calculate()}}> Calculate </button>
-              </div>
-              
-              <hr className="h-border" style={{ width:"50%", borderTop: "1px solid #b5b5b5", marginTop: "50px" }} />
 
           </div>
         
@@ -132,6 +128,13 @@ export default function Home() {
 
         </div>
 
+        <div className="bottom-container">
+        <div className="inline-form">
+          <button type="button" className="btn btn-primary" onClick={() => {calculate()}}> Calculate </button>
+        </div>
+        </div>
+
+      </div>
       </main>
 
       <Footer />

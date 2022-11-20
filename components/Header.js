@@ -1,3 +1,5 @@
+import styles from './Header.module.css'
+
 export default function Header({ title }) {
-  return <h1 className="title">{title}</h1>
+  return <div className={styles.header}>Candle Wax Calculator</div>
 }
